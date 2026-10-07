@@ -33,7 +33,7 @@ export const ADSENSE_CONFIG: AdSenseSettings = {
   enabled: false,
   
   // Replace with your Google AdSense Publisher ID
-  publisherId: 'ca-pub-XXXXXXXXXXXXXXXX',
+  publisherId: 'ca-pub-9418145553394789',
   
   // When true, renders a clean preview box indicating the active ad slot
   testMode: true,
