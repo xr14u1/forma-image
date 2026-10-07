@@ -53,10 +53,10 @@ export const PrivacyPage: React.FC = () => {
 
         <section className="space-y-3">
           <h3 className="text-base font-bold text-zinc-900 dark:text-white">
-            3. Analytics & Advertising
+            3. Zero Tracking & No Third-Party Ads
           </h3>
           <p className="leading-relaxed">
-            To keep Forma completely free without requiring subscriptions or accounts, non-intrusive advertisements may be displayed via Google AdSense in designated ad slots. Google AdSense may use cookies to serve ads based on prior visits. You may opt out of personalized advertising by visiting Google Ad Settings.
+            Forma is completely free, does not use advertising trackers or third-party ad networks, and requires no account registrations or subscriptions. Your browsing experience remains private and distraction-free.
           </p>
         </section>
 

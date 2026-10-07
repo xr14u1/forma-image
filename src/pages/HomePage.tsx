@@ -15,7 +15,6 @@ import {
 } from 'lucide-react';
 import { Dropzone } from '../components/Dropzone';
 import { BatchConverter } from '../components/BatchConverter';
-import { AdSlot } from '../components/AdSlot';
 import type { ImageItem } from '../types';
 
 interface HomePageProps {
@@ -152,9 +151,6 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Monetization AdSlot 1: Below Hero Upload */}
-      <AdSlot slotKey="heroBelow" />
-
       {/* Feature Showcase Grid: Dedicated Tools */}
       <section className="space-y-8">
         <div className="text-center space-y-2">
@@ -243,9 +239,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           ))}
         </div>
       </section>
-
-      {/* Monetization AdSlot 2: Content Mid */}
-      <AdSlot slotKey="contentMid" />
 
       {/* Why Forma — Client-Side Architecture vs Traditional Uploaders */}
       <section className="rounded-3xl border border-zinc-200/90 dark:border-white/10 bg-white dark:bg-[#0A0A0C] p-6 sm:p-10 shadow-xl">
@@ -341,9 +334,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           ))}
         </div>
       </section>
-
-      {/* Monetization AdSlot 3: Footer Above */}
-      <AdSlot slotKey="footerAbove" />
 
     </div>
   );

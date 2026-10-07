@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 import { Dropzone } from '../components/Dropzone';
 import { BatchConverter } from '../components/BatchConverter';
-import { AdSlot } from '../components/AdSlot';
 import type { ImageItem, TargetFormat } from '../types';
 
 interface FormatPairPageProps {
@@ -88,9 +87,6 @@ export const FormatPairPage: React.FC<FormatPairPageProps> = ({
           )}
         </div>
       </div>
-
-      {/* AdSlot */}
-      <AdSlot slotKey="toolBelow" />
 
       {/* Benefits / Technical breakdown */}
       <section className="rounded-3xl border border-zinc-200/90 dark:border-white/10 bg-white dark:bg-[#0A0A0C] p-6 sm:p-8 shadow-xl space-y-6">
@@ -181,9 +177,6 @@ export const FormatPairPage: React.FC<FormatPairPageProps> = ({
           ))}
         </div>
       </section>
-
-      {/* AdSlot footer */}
-      <AdSlot slotKey="footerAbove" />
 
     </div>
   );
