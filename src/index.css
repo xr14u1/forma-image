@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+/* Force Tailwind v4 class-based dark mode selector */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-primary: #FAFAFD;
+    --bg-surface: #FFFFFF;
+    --bg-surface-elevated: #F4F4F7;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+    --text-main: #09090B;
+    --text-muted: #64748B;
+    --text-subtle: #94A3B8;
+    --accent-emerald: #05DF72;
+    --accent-emerald-dark: #00C860;
+    --accent-glow: rgba(5, 223, 114, 0.25);
+  }
+
+  .dark {
+    --bg-primary: #000000;
+    --bg-surface: #0A0A0C;
+    --bg-surface-elevated: #111114;
+    --border-subtle: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --text-main: #FFFFFF;
+    --text-muted: #94A3B8;
+    --text-subtle: #64748B;
+    --accent-emerald: #00E599;
+    --accent-emerald-dark: #05DF72;
+    --accent-glow: rgba(0, 229, 153, 0.35);
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  html, body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* OLED and Tactile Textures from Qraft reference */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+}
+
+/* Emerald Ambient Glow Radiance */
+.emerald-ambient-glow {
+  background: radial-gradient(circle 450px at 50% -10%, rgba(5, 223, 114, 0.15), transparent 70%);
+}
+
+.dark .emerald-ambient-glow {
+  background: radial-gradient(circle 500px at 50% -10%, rgba(0, 229, 153, 0.12), transparent 70%);
+}
+
+/* Glass & Elevated OLED Cards */
+.oled-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.03);
+}
+
+.dark .oled-card {
+  background-color: #0A0A0C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03), 0 8px 32px rgba(0, 0, 0, 0.7);
+}
+
+.oled-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.oled-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(5, 223, 114, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(5, 223, 114, 0.15);
+}
+
+.dark .oled-card-hover:hover {
+  border-color: rgba(0, 229, 153, 0.45);
+  box-shadow: 0 0 25px -5px rgba(0, 229, 153, 0.2);
+}
+
+/* Shimmer & Progress Animation */
+@keyframes shimmerWave {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  animation: shimmerWave 2s infinite;
+}
+
+/* Pulsing Glow Animation */
+@keyframes emeraldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 229, 153, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 229, 153, 0);
+  }
+}
+
+.animate-emerald-pulse {
+  animation: emeraldPulse 2.5s infinite;
+}
+
+/* Float Glow Animation */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* Smooth Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.45);
+}
