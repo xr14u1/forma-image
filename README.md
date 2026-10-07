@@ -40,30 +40,6 @@
 
 ---
 
-## 🚀 Quick Start
-
-### 1. One-Click Local Runner (Windows)
-Double-click [`start.bat`](file:///start.bat) to launch the dev server immediately, or run [`test-local.bat`](file:///test-local.bat) for an interactive test menu:
-```cmd
-test-local.bat
-```
-
-### 2. Manual CLI Start
-```bash
-cd forma-image
-npm install
-npm run dev
-```
-Open `http://localhost:5173/` in your browser.
-
-### 3. Production Build
-```bash
-npm run build
-```
-The output will be generated inside the `/dist` directory, ready for static hosting.
-
----
-
 ## 🌐 Deploy to Vercel
 
 1. Push this repository to GitHub or GitLab.
@@ -76,17 +52,6 @@ The output will be generated inside the `/dist` directory, ready for static host
 8. Click **Deploy**.
 
 `vercel.json` is already included to handle client-side SPA routing and security headers automatically.
-
----
-
-## 💰 Monetization / Google AdSense Configuration
-
-To enable real Google AdSense ads:
-1. Open [`src/utils/adsense.config.ts`](file:///src/utils/adsense.config.ts).
-2. Set `enabled: true`.
-3. Set `testMode: false`.
-4. Enter your valid publisher ID (e.g. `ca-pub-XXXXXXXXXXXXXXXX`).
-5. Replace the individual ad slot IDs with your Google AdSense unit IDs.
 
 ---
 
